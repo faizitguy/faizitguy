@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Faiz Ahmed Khan</h1>
 <h3 align="center">A passionate Full Stack Developer from India</h3>
 
-- 👨‍💻 All of my projects are available at [https://faiz-khan-portfolio.netlify.app/](https://faizitguy.github.io/faiz-portfolio/)
+- 👨‍💻 All of my projects are available at [https://faiz-khan-portfolio.netlify.app/](https://faiz-khan-portfolio.netlify.app/)
 
 - 💬 Ask me about **react, redux**
 
