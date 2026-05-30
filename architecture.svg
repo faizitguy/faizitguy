@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 760" width="1320" height="760" fill="none" font-family="'Segoe UI',Helvetica,Arial,sans-serif" role="img" aria-label="Production AI Agent System Design">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080c14"/><stop offset="1" stop-color="#0e1830"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#152139"/><stop offset="1" stop-color="#0f1a2e"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15294a" stop-opacity="0.55"/><stop offset="1" stop-color="#1F3864" stop-opacity="0.35"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#2E75B6" stroke-width="0.5" opacity="0.07"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="aBlue" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#58a6ff"/></marker>
+    <marker id="aAmber" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#FF9900"/></marker>
+    <marker id="aGold" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d2a31a"/></marker>
+    <marker id="aGreen" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2ea043"/></marker>
+  </defs>
+
+  <rect width="1320" height="760" rx="20" fill="url(#bg)"/>
+  <rect width="1320" height="760" rx="20" fill="url(#grid)"/>
+  <text x="42" y="46" font-size="22" font-weight="800" fill="#cfe6ff">Production AI Agent — System Design</text>
+  <text x="42" y="70" font-size="13" fill="#6b8cb8" font-family="'Fira Code',monospace">LangGraph · Claude (AWS Bedrock) · FastAPI · React — with guardrails &amp; observability built in</text>
+
+  <!-- ============ WIRES (under nodes) ============ -->
+  <!-- forward data flow (blue) -->
+  <g stroke="#58a6ff" stroke-width="2" fill="none" stroke-dasharray="8 7" marker-end="url(#aBlue)" opacity="0.9">
+    <path d="M132,360 L166,360"><animate attributeName="stroke-dashoffset" values="0;-30" dur="0.9s" repeatCount="indefinite"/></path>
+    <path d="M322,360 L356,360"><animate attributeName="stroke-dashoffset" values="0;-30" dur="0.9s" repeatCount="indefinite"/></path>
+    <path d="M512,356 Q590,300 696,250"><animate attributeName="stroke-dashoffset" values="0;-30" dur="1.1s" repeatCount="indefinite"/></path>
+  </g>
+  <!-- agent loop (blue, brighter) -->
+  <g stroke="#7cc0ff" stroke-width="2.2" fill="none" stroke-dasharray="7 6" marker-end="url(#aBlue)">
+    <path d="M842,252 Q902,278 904,320"><animate attributeName="stroke-dashoffset" values="0;-26" dur="0.8s" repeatCount="indefinite"/></path>
+    <path d="M846,356 L754,356"><animate attributeName="stroke-dashoffset" values="0;-26" dur="0.8s" repeatCount="indefinite"/></path>
+    <path d="M676,322 Q686,272 716,252"><animate attributeName="stroke-dashoffset" values="0;-26" dur="0.8s" repeatCount="indefinite"/></path>
+  </g>
+  <!-- ACT to external services (blue) -->
+  <g stroke="#58a6ff" stroke-width="2" fill="none" stroke-dasharray="8 7" marker-end="url(#aBlue)" opacity="0.9">
+    <path d="M968,344 Q1004,262 1034,196"><animate attributeName="stroke-dashoffset" values="0;-30" dur="1s" repeatCount="indefinite"/></path>
+    <path d="M970,352 Q1004,322 1034,300"><animate attributeName="stroke-dashoffset" values="0;-30" dur="1s" repeatCount="indefinite"/></path>
+    <path d="M970,360 Q1004,378 1034,392"><animate attributeName="stroke-dashoffset" values="0;-30" dur="1s" repeatCount="indefinite"/></path>
+    <path d="M968,368 Q1004,440 1034,486"><animate attributeName="stroke-dashoffset" values="0;-30" dur="1s" repeatCount="indefinite"/></path>
+  </g>
+  <!-- guardrails intercept (amber) -->
+  <g stroke="#FF9900" stroke-width="2.2" fill="none" stroke-dasharray="6 6" marker-end="url(#aAmber)">
+    <path d="M868,452 Q908,418 906,378"><animate attributeName="stroke-dashoffset" values="0;-24" dur="0.7s" repeatCount="indefinite"/></path>
+  </g>
+  <!-- SSE stream back to frontend (blue dashed, over the top) -->
+  <g stroke="#58a6ff" stroke-width="2" fill="none" stroke-dasharray="3 8" marker-end="url(#aBlue)" opacity="0.85">
+    <path d="M744,214 Q480,96 250,316"><animate attributeName="stroke-dashoffset" values="0;-33" dur="1.4s" repeatCount="indefinite"/></path>
+  </g>
+  <text x="470" y="120" font-size="12" fill="#7cc0ff" font-family="'Fira Code',monospace" text-anchor="middle">SSE stream — tokens + artifacts</text>
+  <!-- persistence to postgres (green) -->
+  <g stroke="#2ea043" stroke-width="2" fill="none" stroke-dasharray="7 7" marker-end="url(#aGreen)" opacity="0.9">
+    <path d="M700,562 Q470,600 300,624"><animate attributeName="stroke-dashoffset" values="0;-28" dur="1.2s" repeatCount="indefinite"/></path>
+    <path d="M436,404 L520,620"><animate attributeName="stroke-dashoffset" values="0;-28" dur="1.2s" repeatCount="indefinite"/></path>
+  </g>
+  <!-- observability traces (gold dotted) -->
+  <g stroke="#d2a31a" stroke-width="1.8" fill="none" stroke-dasharray="2 7" marker-end="url(#aGold)" opacity="0.85">
+    <path d="M1150,224 Q1010,560 950,622"><animate attributeName="stroke-dashoffset" values="0;-27" dur="1.6s" repeatCount="indefinite"/></path>
+    <path d="M790,562 L830,620"><animate attributeName="stroke-dashoffset" values="0;-27" dur="1.6s" repeatCount="indefinite"/></path>
+  </g>
+
+  <!-- ============ NODES ============ -->
+  <!-- User -->
+  <g filter="url(#soft)">
+    <rect x="42" y="328" width="90" height="64" rx="12" fill="url(#panel)" stroke="#2E75B6" stroke-opacity="0.6"/>
+    <circle cx="87" cy="354" r="9" fill="none" stroke="#9fd0ff" stroke-width="2"/><path d="M75,378 a12,10 0 0 1 24,0" fill="none" stroke="#9fd0ff" stroke-width="2"/>
+    <text x="87" y="386" text-anchor="middle" font-size="12" fill="#cfe6ff" font-weight="600">User</text>
+  </g>
+  <!-- Frontend -->
+  <g filter="url(#soft)">
+    <rect x="166" y="318" width="156" height="84" rx="14" fill="url(#panel)" stroke="#61DAFB" stroke-opacity="0.55"/>
+    <circle cx="186" cy="344" r="4" fill="#61DAFB"/>
+    <text x="244" y="350" text-anchor="middle" font-size="15" fill="#fff" font-weight="700">React 18</text>
+    <text x="244" y="372" text-anchor="middle" font-size="12" fill="#9fb6d6">Frontend · live SSE UI</text>
+  </g>
+  <!-- Backend -->
+  <g filter="url(#soft)">
+    <rect x="356" y="318" width="156" height="84" rx="14" fill="url(#panel)" stroke="#009688" stroke-opacity="0.6"/>
+    <circle cx="376" cy="344" r="4" fill="#1ab79f"/>
+    <text x="434" y="350" text-anchor="middle" font-size="15" fill="#fff" font-weight="700">FastAPI</text>
+    <text x="434" y="372" text-anchor="middle" font-size="12" fill="#9fb6d6">API · auth · streaming</text>
+  </g>
+
+  <!-- Agent Core panel -->
+  <rect x="556" y="150" width="430" height="430" rx="18" fill="url(#core)" stroke="#2E75B6" stroke-opacity="0.5" stroke-dasharray="3 4"/>
+  <circle cx="572" cy="178" r="4" fill="#9fd0ff"/>
+  <text x="586" y="182" font-size="14" fill="#9fd0ff" font-weight="700">LangGraph Agent Core</text>
+
+  <!-- THINK -->
+  <g filter="url(#soft)">
+    <rect x="700" y="200" width="142" height="54" rx="13" fill="#13294d" stroke="#58a6ff"/>
+    <text x="771" y="226" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">THINK</text>
+    <text x="771" y="244" text-anchor="middle" font-size="11" fill="#9fb6d6">reason &amp; plan</text>
+  </g>
+  <!-- ACT -->
+  <g filter="url(#soft)">
+    <rect x="846" y="320" width="124" height="54" rx="13" fill="#13294d" stroke="#58a6ff"/>
+    <text x="908" y="346" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">ACT</text>
+    <text x="908" y="364" text-anchor="middle" font-size="11" fill="#9fb6d6">call tool</text>
+  </g>
+  <!-- OBSERVE -->
+  <g filter="url(#soft)">
+    <rect x="616" y="320" width="138" height="54" rx="13" fill="#13294d" stroke="#58a6ff"/>
+    <text x="685" y="346" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">OBSERVE</text>
+    <text x="685" y="364" text-anchor="middle" font-size="11" fill="#9fb6d6">evaluate result</text>
+  </g>
+  <!-- Guardrails -->
+  <g filter="url(#soft)">
+    <rect x="716" y="450" width="184" height="58" rx="13" fill="#2a1d05" stroke="#FF9900"/>
+    <text x="808" y="476" text-anchor="middle" font-size="13" fill="#ffcf80" font-weight="700">Guardrails · HookRunner</text>
+    <text x="808" y="494" text-anchor="middle" font-size="11" fill="#caa566">detect loops · cancel · self-correct</text>
+  </g>
+
+  <!-- LLM -->
+  <g filter="url(#soft)">
+    <rect x="1034" y="158" width="244" height="74" rx="14" fill="#1a1336" stroke="#8a6bff"/>
+    <circle cx="1056" cy="186" r="4" fill="#b8a6ff"/>
+    <text x="1162" y="190" text-anchor="middle" font-size="15" fill="#fff" font-weight="700">Claude</text>
+    <text x="1162" y="212" text-anchor="middle" font-size="12" fill="#b8a6ff">LLM · AWS Bedrock</text>
+  </g>
+  <!-- Subagents -->
+  <g filter="url(#soft)">
+    <rect x="1034" y="252" width="244" height="80" rx="14" fill="url(#panel)" stroke="#58a6ff" stroke-opacity="0.7"/>
+    <text x="1156" y="282" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Subagents</text>
+    <text x="1156" y="304" text-anchor="middle" font-size="11" fill="#9fb6d6">SQL · Artifact · Web Analyzer</text>
+    <text x="1156" y="320" text-anchor="middle" font-size="11" fill="#9fb6d6">(each its own mini-graph)</text>
+  </g>
+  <!-- Tools -->
+  <g filter="url(#soft)">
+    <rect x="1034" y="352" width="244" height="62" rx="14" fill="url(#panel)" stroke="#58a6ff" stroke-opacity="0.7"/>
+    <text x="1156" y="380" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Tool Belt (30+)</text>
+    <text x="1156" y="398" text-anchor="middle" font-size="11" fill="#9fb6d6">SQL · web · files · python</text>
+  </g>
+  <!-- Sandbox -->
+  <g filter="url(#soft)">
+    <rect x="1034" y="450" width="244" height="62" rx="14" fill="url(#panel)" stroke="#2ea043" stroke-opacity="0.7"/>
+    <text x="1156" y="478" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Code-Executor</text>
+    <text x="1156" y="496" text-anchor="middle" font-size="11" fill="#9fb6d6">sandboxed · hardened</text>
+  </g>
+
+  <!-- Infra row -->
+  <g filter="url(#soft)">
+    <rect x="166" y="606" width="240" height="78" rx="14" fill="url(#panel)" stroke="#2ea043" stroke-opacity="0.7"/>
+    <text x="286" y="636" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">PostgreSQL</text>
+    <text x="286" y="658" text-anchor="middle" font-size="11" fill="#9fb6d6">conversation checkpoints</text>
+  </g>
+  <g filter="url(#soft)">
+    <rect x="430" y="606" width="180" height="78" rx="14" fill="url(#panel)" stroke="#DC382D" stroke-opacity="0.7"/>
+    <text x="520" y="636" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Redis</text>
+    <text x="520" y="658" text-anchor="middle" font-size="11" fill="#9fb6d6">cache · queue</text>
+  </g>
+  <g filter="url(#soft)">
+    <rect x="636" y="606" width="360" height="78" rx="14" fill="#2a230a" stroke="#d2a31a"/>
+    <text x="816" y="636" text-anchor="middle" font-size="14" fill="#ffe9a8" font-weight="700">Langfuse — Observability</text>
+    <text x="816" y="658" text-anchor="middle" font-size="11" fill="#c9b56a">cost · latency · traces · PII redaction · 100% on-prem</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="11" font-family="'Fira Code',monospace">
+    <line x1="1036" y1="624" x2="1066" y2="624" stroke="#58a6ff" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="1072" y="628" fill="#8fb6e6">data flow</text>
+    <line x1="1036" y1="644" x2="1066" y2="644" stroke="#FF9900" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="1072" y="648" fill="#caa566">guardrails</text>
+    <line x1="1180" y1="624" x2="1210" y2="624" stroke="#d2a31a" stroke-width="2" stroke-dasharray="2 6"/>
+    <text x="1216" y="628" fill="#c9b56a">traces</text>
+    <line x1="1180" y1="644" x2="1210" y2="644" stroke="#2ea043" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="1216" y="648" fill="#9fc99f">persist</text>
+  </g>
+</svg>

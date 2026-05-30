@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" fill="none" role="img" aria-label="Faiz Khan - Full-Stack AI Engineer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090d14"/>
+      <stop offset="0.5" stop-color="#13213a"/>
+      <stop offset="1" stop-color="#1F3864"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2E75B6"/>
+      <stop offset="1" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#9fd0ff"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#2E75B6" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#2E75B6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#2E75B6" stroke-width="0.6" opacity="0.10"/>
+    </pattern>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="1200" height="340" rx="22" fill="url(#bg)"/>
+  <rect width="1200" height="340" rx="22" fill="url(#grid)"/>
+  <ellipse cx="930" cy="170" rx="320" ry="230" fill="url(#halo)"/>
+
+  <!-- ============ AGENT GRAPH MOTIF (right) ============ -->
+  <g transform="translate(935,172)" filter="url(#glow)">
+    <!-- edges -->
+    <g stroke="url(#accent)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="6 8">
+      <line x1="0" y1="0" x2="-110" y2="-86"/>
+      <line x1="0" y1="0" x2="96" y2="-92"/>
+      <line x1="0" y1="0" x2="150" y2="36"/>
+      <line x1="0" y1="0" x2="40" y2="118"/>
+      <line x1="0" y1="0" x2="-118" y2="64"/>
+      <line x1="-110" y1="-86" x2="96" y2="-92"/>
+      <line x1="150" y1="36" x2="40" y2="118"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="2.6s" repeatCount="indefinite"/>
+    </g>
+    <!-- hub -->
+    <circle cx="0" cy="0" r="13" fill="#58a6ff">
+      <animate attributeName="r" values="11;15;11" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <!-- nodes -->
+    <g fill="#2E75B6">
+      <circle cx="-110" cy="-86" r="8"><animate attributeName="opacity" values="0.45;1;0.45" dur="3s" begin="0s" repeatCount="indefinite"/></circle>
+      <circle cx="96" cy="-92" r="8"><animate attributeName="opacity" values="0.45;1;0.45" dur="3s" begin="0.5s" repeatCount="indefinite"/></circle>
+      <circle cx="150" cy="36" r="8"><animate attributeName="opacity" values="0.45;1;0.45" dur="3s" begin="1.0s" repeatCount="indefinite"/></circle>
+      <circle cx="40" cy="118" r="8"><animate attributeName="opacity" values="0.45;1;0.45" dur="3s" begin="1.5s" repeatCount="indefinite"/></circle>
+      <circle cx="-118" cy="64" r="8"><animate attributeName="opacity" values="0.45;1;0.45" dur="3s" begin="2.0s" repeatCount="indefinite"/></circle>
+    </g>
+  </g>
+
+  <!-- ============ TEXT (left) ============ -->
+  <text x="70" y="120" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="66" font-weight="800" fill="url(#nameGrad)" letter-spacing="2">FAIZ KHAN</text>
+  <rect x="73" y="138" width="150" height="4" rx="2" fill="url(#accent)"/>
+  <text x="74" y="178" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="27" font-weight="700" fill="#cfe6ff">Full-Stack AI Engineer</text>
+  <text x="74" y="212" font-family="'Fira Code',monospace" font-size="16" fill="#8fb6e6">LLM &amp; Agentic Systems · LangChain · LangGraph · RAG · MCP</text>
+
+  <!-- chips -->
+  <g font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600">
+    <g transform="translate(74,242)">
+      <rect width="118" height="30" rx="15" fill="#2E75B6" opacity="0.16" stroke="#2E75B6" stroke-opacity="0.5"/>
+      <text x="59" y="20" text-anchor="middle" fill="#9fd0ff">AWS Bedrock</text>
+    </g>
+    <g transform="translate(202,242)">
+      <rect width="92" height="30" rx="15" fill="#2E75B6" opacity="0.16" stroke="#2E75B6" stroke-opacity="0.5"/>
+      <text x="46" y="20" text-anchor="middle" fill="#9fd0ff">Python</text>
+    </g>
+    <g transform="translate(304,242)">
+      <rect width="92" height="30" rx="15" fill="#2E75B6" opacity="0.16" stroke="#2E75B6" stroke-opacity="0.5"/>
+      <text x="46" y="20" text-anchor="middle" fill="#9fd0ff">FastAPI</text>
+    </g>
+    <g transform="translate(406,242)">
+      <rect width="80" height="30" rx="15" fill="#2E75B6" opacity="0.16" stroke="#2E75B6" stroke-opacity="0.5"/>
+      <text x="40" y="20" text-anchor="middle" fill="#9fd0ff">React</text>
+    </g>
+    <g transform="translate(496,242)">
+      <rect width="92" height="30" rx="15" fill="#2E75B6" opacity="0.16" stroke="#2E75B6" stroke-opacity="0.5"/>
+      <text x="46" y="20" text-anchor="middle" fill="#9fd0ff">Node.js</text>
+    </g>
+  </g>
+
+  <!-- tagline -->
+  <text x="74" y="305" font-family="'Fira Code',monospace" font-size="14" fill="#6b8cb8">// turning AI demos into products you can actually trust</text>
+
+  <!-- border sheen -->
+  <rect x="1" y="1" width="1198" height="338" rx="22" fill="none" stroke="url(#accent)" stroke-opacity="0.35" stroke-width="1.5"/>
+</svg>
