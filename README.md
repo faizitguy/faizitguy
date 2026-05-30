@@ -72,23 +72,12 @@ Retrieval-augmented assistants with **vector search** (Pinecone, Qdrant) — e.g
 
 ## 🔁 How I Build Agents That Don't Break
 
-```mermaid
-flowchart LR
-    U([👤 User]) --> T{🧠 THINK}
-    T -->|plan| A[⚙️ ACT · call tool]
-    A --> O[🔍 OBSERVE]
-    O -->|self-correct| T
-    G[[🛡️ Loop Guardrails]] -.detect &amp; cancel.-> A
-    M[(📊 Observability<br/>cost · latency · PII)] -.traces.-> A
-    O --> R([✨ Response + React artifact])
+<!-- architecture.svg must live in the repo root alongside this README -->
+<p align="center">
+  <img width="100%" src="./architecture.svg" alt="Production AI Agent — System Design"/>
+</p>
 
-    classDef hub fill:#1F3864,stroke:#58a6ff,color:#fff;
-    classDef guard fill:#2E75B6,stroke:#9fd0ff,color:#fff;
-    class T,A,O hub;
-    class G,M guard;
-```
-
-<sub>The loop above is the real architecture behind my flagship work — a LangGraph agent over Claude with guardrails and observability bolted on so it stays reliable and affordable in production.</sub>
+<sub>☝️ A real production architecture from my flagship work — a **LangGraph** agent loop (THINK → ACT → OBSERVE) over **Claude (AWS Bedrock)**, streaming to React over SSE, with **guardrails** intercepting tool calls and **Langfuse** tracing every step. Data flows along the wires; guardrails (amber) catch runaway loops; traces (gold) feed observability; state persists (green) to PostgreSQL.</sub>
 
 ---
 
